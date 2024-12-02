@@ -4,6 +4,7 @@ import RQpage from "./components/RQPage";
 import Navbar from "./Navbar";
 import SuperPage from "./components/SuperPage";
 import { QueryClient, QueryClientProvider } from "react-query";
+import {ReactQueryDevtools} from "react-query/devtools";
 
 
 const queryClient = new QueryClient()
@@ -28,6 +29,7 @@ function NavLayout() {
           <Outlet />
         </section>
       </main>
+      <ReactQueryDevtools initialIsOpen={false}/>
     </QueryClientProvider>
   );
 }
