@@ -3,6 +3,10 @@ import Home from "./components/Home";
 import RQpage from "./components/RQPage";
 import Navbar from "./Navbar";
 import SuperPage from "./components/SuperPage";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+
+const queryClient = new QueryClient()
 
 export const App = createBrowserRouter([
   {
@@ -17,12 +21,13 @@ export const App = createBrowserRouter([
 
 function NavLayout() {
   return (
-    <main>
-      <Navbar />
-      <section className="pl-10">
-      <Outlet />
-      </section>
-      
-    </main>
-  )
+    <QueryClientProvider client={queryClient}>
+      <main>
+        <Navbar />
+        <section className="pl-10">
+          <Outlet />
+        </section>
+      </main>
+    </QueryClientProvider>
+  );
 }
