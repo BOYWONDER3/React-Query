@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import SuperPage from "./components/SuperPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
+import IdPage from "./components/idPage";
 
 
 const queryClient = new QueryClient()
@@ -16,6 +17,7 @@ export const App = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/rq-page", element: <RQpage /> },
       { path: "/super-page", element: <SuperPage /> },
+      { path: "/id-page/:heroId", element: < IdPage/> },
     ],
   },
 ]);
